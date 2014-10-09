@@ -1,0 +1,51 @@
+*coward.txt*  Automatic handling of current working directory
+
+Author:  Lowe Thiderman <http://thiderman.org/>
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                    *coward*
+
+Simple stuff; this is a plugin that automatically sets current working
+directory for files. The plugin scans directories upwards and tries to find
+something that looks like a VCS directory or file. If one is found, that
+directory is set. If not, the file's parent directory is used.
+
+The current default of tokens to look for is
+['.git/', '.hg/', '.svn/', '.bzr/', '_darcs/']
+
+INSTALLATION                                    *coward-installation*
+
+The autocommand that |coward| provides is enabled by default.
+
+CONFIGURATION                                   *coward-configuration*
+
+                                                *g:coward_extra_tokens*
+g:coward_extra_tokens~
+Default: empty list
+
+Use this option to set a list of other tokens you want to look for. |coward|
+will look for these before it searches for the default ones. Both files and
+directories are valid. If you add directories, make sure to add them with
+a trailing slash.
+
+Example:
+>
+  g:coward_extra_tokens = ['.cvs/']
+<
+
+                                                *g:coward_disable*
+                                                *b:coward_disable*
+g:coward_disable~
+b:coward_disable~
+Default: Not set
+
+Use these options to disable the plugin.
+
+Example:
+>
+  g:coward_extra_tokens = ['.cvs/']
+<
+
+ vim:tw=78:ts=8:ft=help:norl:

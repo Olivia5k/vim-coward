@@ -30,7 +30,7 @@ function! s:set_working_directory()
     return
   endif
 
-  for trigger in get(g:, 'coward_triggers', s:default)
+  for trigger in get(g:, 'coward_extra_tokens', []) + s:default
     " Decide if we should use finddir() or findfile()
     let method = 'find' . (trigger =~ '/$' ? 'dir' : 'file')
 
