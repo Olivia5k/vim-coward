@@ -34,14 +34,14 @@ Example:
 >
   g:coward_extra_tokens = ['.cvs/']
 <
-
                                                 *g:coward_disable*
                                                 *b:coward_disable*
 g:coward_disable~
 b:coward_disable~
 Default: Not set
 
-Use these options to disable the plugin.
+Use these options to disable the plugin, either completely or just local to
+a buffer.
 
 Example:
 >
