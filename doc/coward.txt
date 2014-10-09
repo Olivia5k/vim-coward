@@ -45,7 +45,7 @@ a buffer.
 
 Example:
 >
-  g:coward_extra_tokens = ['.cvs/']
+  g:coward_disable = 1
 <
 
  vim:tw=78:ts=8:ft=help:norl:
